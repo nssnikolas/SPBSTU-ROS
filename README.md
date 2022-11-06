@@ -35,5 +35,5 @@ Where "1 2 3 4 5 6" are the SLAE coefficients.
 
 ---
 
-### Задание 2 - SLAM
+### Работа #2. SLAM
 
