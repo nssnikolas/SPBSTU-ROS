@@ -1,0 +1,8 @@
+float32 a11
+float32 a12
+float32 b1
+float32 a21
+float32 a22
+float32 b2
+---
+float32[] result
