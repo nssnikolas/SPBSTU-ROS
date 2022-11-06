@@ -1,30 +1,39 @@
 # SPBSTU-ROS
-4th grade lab works
+### 4th grade lab works
 
-Работа #1. Вариант #6. Решение СЛАУ
+---
 
-Реализовать сервис, который принимает на вход 6 чисел с плавающей точкой - коэффициенты a,b,c,d,e,f системы линейных уравнений {ax+by = c; dx + ey = f}. Ответом является массив корней системы уравнений (http://docs.ros.org/en/api/std_msgs/html/msg/Float32MultiArray.html). Он является пустым, если корней нет, или содержит два числа - x и y. Этот же массив передается в сообщении. В функции обработчике корни объединяются в одну строку и выводятся пользователю или соответствующее сообщение, если корней нет.
+### Работа #1. Вариант #6. Решение СЛАУ
 
-Пример вызова для системы с двумя корнями:
+This package solves second-order SLAE. 
+The solution is to contact the service with a request of six numbers (coefficients of the equation).
+For example, a query with the parameters "5 6 7 1 2 3" I is the following system of equations:
+> 5x + 6y = 7
+> 
+> x + 2y = 3
 
-● Пример запроса к сервису: 4.0 6.0 9.0 5.0 1.0 18.0
+To start, you need to:
+- Clone data from the repository to the src workspace ROS:
 
-● Ответ сервиса: [3.81 -1.04]
+For example, if the workspace is: ~/workspace, then the folder ~/workspace/src/ should contain the folder uss_cs
 
-● Сообщение в топик: [3.81 -1.04]
+- Assemble a package from the workspace
+- Run `roscore` in the first terminal
+- Launch the service in the second terminal:
 
-● Результат обработки сообщения: "x = 3.81, у = -1.04"
+`rosrun uss_cs service`
 
-И запрос для системы, у которой нет корней:
+- In the third terminal, launch the subscriber of the topic to which the service publishes data:
 
-● Пример запроса к сервису: 1.0 9.0 9.0 1.0 9.0 5.0
+`rosrun uss_cs subscriber`
 
-● Ответ сервиса: []
+- And in the last terminal, you can send a request to the service with the command: 
 
-● Сообщение в топик: []
+`rosservice call /slae_solver 1 2 3 4 5 6`
 
-● Результат обработки сообщения: "No solutions"
+Where "1 2 3 4 5 6" are the SLAE coefficients.
 
+---
 
+### Задание 2 - SLAM
 
-Работа #2.
