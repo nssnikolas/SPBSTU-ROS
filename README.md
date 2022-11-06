@@ -3,7 +3,7 @@
 
 ---
 
-### Работа #1. Вариант #6. Решение СЛАУ
+### Work #1. Option #6. Solving SLAE.
 
 This package solves second-order SLAE. 
 The solution is to contact the service with a request of six numbers (coefficients of the equation).
@@ -35,5 +35,5 @@ Where "1 2 3 4 5 6" are the SLAE coefficients.
 
 ---
 
-### Работа #2. SLAM
+### Work #2. SLAM
 
